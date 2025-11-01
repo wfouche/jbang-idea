@@ -61,7 +61,6 @@ fun getJBangCmdAbsolutionPath(): String {
             // try ~/.sdkman/candidates/jbang/current/bin/jbang
             val sdkmanJBangScript = Path.of(userHome, ".sdkman/candidates/jbang/current/bin/$jbangScript")
             if (Files.exists(sdkmanJBangScript)) {
-                // fallback to ~/.jbang/bin/jbang
                 actualJBangScript = sdkmanJBangScript
             }
         }
