@@ -55,9 +55,15 @@ fun getJBangCmdAbsolutionPath(): String {
     }
 
     if(actualJBangScript==null) {
+        // try ~/.jbang/bin/jbang
         actualJBangScript = Path.of(userHome, ".jbang/bin/$jbangScript")
         if (!Files.exists(actualJBangScript)) {
+            // try ~/.sdkman/candidates/jbang/current/bin/jbang
             actualJBangScript = Path.of(userHome, ".sdkman/candidates/jbang/current/bin/$jbangScript")
+            if (!Files.exists(actualJBangScript)) {
+                // fallback to ~/.jbang/bin/jbang
+                actualJBangScript = Path.of(userHome, ".jbang/bin/$jbangScript")
+            }
         }
     }
 
