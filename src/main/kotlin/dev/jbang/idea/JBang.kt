@@ -56,6 +56,9 @@ fun getJBangCmdAbsolutionPath(): String {
 
     if(actualJBangScript==null) {
         actualJBangScript = Path.of(userHome, ".jbang/bin/$jbangScript")
+        if (!Files.exists(actualJBangScript)) {
+            actualJBangScript = Path.of(userHome, ".sdkman/candidates/jbang/current/bin/$jbangScript")
+        }
     }
 
     return actualJBangScript?.toAbsolutePath().toString()

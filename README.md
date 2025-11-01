@@ -45,7 +45,7 @@ Right click JBang script and Choose `Sync JBang DEPS` and sync dependencies betw
 ## Build
 
 ```
-$ # JDK 11 required
+$ # JDK 17 required
 $ ./gradlew -x test patchPluginXml buildPlugin
 ```
 
