@@ -3,6 +3,7 @@
 # jbang-idea-plugin Changelog
 
 ## Unreleased
+- Fix: Allow comments in jbang-catalog.json files
 
 ## 0.25.1
 
